@@ -1,0 +1,9 @@
+C:\Users\jthomasson\documents\visual studio 2013\Projects\VectorObjectPlotter\VectorObjectPlotter\bin\Release\VectorObjectPlotter.exe.config
+C:\Users\jthomasson\documents\visual studio 2013\Projects\VectorObjectPlotter\VectorObjectPlotter\bin\Release\VectorObjectPlotter.exe
+C:\Users\jthomasson\documents\visual studio 2013\Projects\VectorObjectPlotter\VectorObjectPlotter\bin\Release\VectorObjectPlotter.pdb
+C:\Users\jthomasson\documents\visual studio 2013\Projects\VectorObjectPlotter\VectorObjectPlotter\obj\Release\VectorObjectPlotter.csprojResolveAssemblyReference.cache
+C:\Users\jthomasson\documents\visual studio 2013\Projects\VectorObjectPlotter\VectorObjectPlotter\obj\Release\VectorObjectPlotter.Form1.resources
+C:\Users\jthomasson\documents\visual studio 2013\Projects\VectorObjectPlotter\VectorObjectPlotter\obj\Release\VectorObjectPlotter.Properties.Resources.resources
+C:\Users\jthomasson\documents\visual studio 2013\Projects\VectorObjectPlotter\VectorObjectPlotter\obj\Release\VectorObjectPlotter.csproj.GenerateResource.Cache
+C:\Users\jthomasson\documents\visual studio 2013\Projects\VectorObjectPlotter\VectorObjectPlotter\obj\Release\VectorObjectPlotter.exe
+C:\Users\jthomasson\documents\visual studio 2013\Projects\VectorObjectPlotter\VectorObjectPlotter\obj\Release\VectorObjectPlotter.pdb
