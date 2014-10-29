@@ -37,11 +37,6 @@ namespace VectorObjectPlotter
 
             g.PageUnit = GraphicsUnit.Pixel;
 
-            //label1.Text = pbCanvas.Width.ToString();
-           
-
-            
-
             //check to see whether we should show grid lines
             if (_showGrid)
             {
@@ -82,17 +77,6 @@ namespace VectorObjectPlotter
                 for (var i = 0; i < _coordinates.Count - 1; i++)
                 {
                     //need to account for image scaling here...
-                    //var convertedCoord = ScaleFromPictureBox(_coordinates[i]);
-                    //var scaledCoord = ScaleCoordinate(convertedCoord);
-                    //scaledCoord = ScaleToPictureBox(scaledCoord);
-
-                    //var nextConvertedCoord = ScaleFromPictureBox(_coordinates[i + 1]);
-                    //var nextScaledCoord = ScaleCoordinate(nextConvertedCoord);
-                    //nextScaledCoord = ScaleToPictureBox(nextScaledCoord);
-
-
-                    //g.DrawLine(System.Drawing.Pens.Black, scaledCoord.X, scaledCoord.Y,
-                    //    nextScaledCoord.X, nextScaledCoord.Y);
 
                     g.DrawLine(System.Drawing.Pens.Black, _coordinates[i].X, _coordinates[i].Y,
                         _coordinates[i + 1].X, _coordinates[i + 1].Y);
@@ -149,35 +133,7 @@ namespace VectorObjectPlotter
             return height;
         }
 
-        //private Point ScaleCoordinate(Point coordToScale)
-        //{
-        //    //figure out which quadrant the point lies in
-        //    if (coordToScale.X >= 0 && coordToScale.Y >= 0)
-        //    {
-        //        //we're in quadrant 1
-        //        return new Point(coordToScale.X + _scale , coordToScale.Y + _scale );
-        //    }
-        //    else if (coordToScale.X < 0 && coordToScale.Y >= 0)
-        //    {
-        //        //we're in quadrant 2
-        //        return new Point(coordToScale.X - _scale, coordToScale.Y + _scale);
-        //    }
-        //    else if (coordToScale.X < 0 && coordToScale.Y < 0)
-        //    {
-        //        //we're in quadrant 3
-        //        return new Point(coordToScale.X - _scale, coordToScale.Y - _scale);
-        //    }
-        //    else if (coordToScale.X >= 0 && coordToScale.Y < 0)
-        //    {
-        //        //we're in quadrant 4
-        //        return new Point(coordToScale.X + _scale, coordToScale.Y - _scale);
-        //    }
-
-        //    return new Point(coordToScale.X >= 0 ? coordToScale.X + _scale : coordToScale.X - _scale, coordToScale.Y >= 0 ? coordToScale.Y + _scale : coordToScale.Y - _scale);
-
-
-        //}
-
+       
         private void pbCanvas_Click(object sender, EventArgs e)
         {
 
@@ -203,8 +159,7 @@ namespace VectorObjectPlotter
         private Point ScaleFromPictureBox(Point pbCoordinate, bool fromPaint)
         {
             var newCoord = new Point((pbCoordinate.X - (GetCanvasWidth(fromPaint) / 2)), -(pbCoordinate.Y - (GetCanvasWidth(fromPaint) / 2)));
-            //var newCoord = new Point((pbCoordinate.X - (pbCanvas.Width / 2)), -(pbCoordinate.Y - (pbCanvas.Width / 2)));
-
+           
             //check page scaling too
 
 
@@ -316,39 +271,14 @@ namespace VectorObjectPlotter
 
             }
 
-          
-
             pbCanvas.Width = width;
             pbCanvas.Height = height;
 
-          
-
-
             CenterCanvas();
 
-            
-           
         }
 
-        private void pbCanvas_MouseWheel(object sender, System.Windows.Forms.MouseEventArgs e)
-        {
-            //Graphics dc = CreateGraphics();
-            //dc.TranslateTransform(this.AutoScrollPosition.X / m_Scalef,
-            //  this.AutoScrollPosition.Y / m_Scalef);
-            //dc.PageUnit = GraphicsUnit.Pixel;
-            //dc.PageScale = m_Scalef;
-
-            //Point[] mousep = new Point[1];
-            //// make sure to adjust mouse pos.for scroll position
-            //Size scrollOffset = new Size(this.AutoScrollPosition);
-            //mousep[0] = new Point(e.X - scrollOffset.Width, e.Y - scrollOffset.Height);
-
-            //dc.TransformPoints(CoordinateSpace.Page, CoordinateSpace.Device, mousep);
-            //Pen pen = new Pen(Color.Green, 1);
-            //dc.DrawRectangle(pen, m_r1);
-            //if (m_r1.Contains(new Rectangle(mousep[0].X, mousep[0].Y, 1, 1)))
-            //    MessageBox.Show("click inside rectangle");
-        }
+       
 
         private void CenterCanvas()
         {
@@ -438,18 +368,11 @@ namespace VectorObjectPlotter
                             sBuilder.Append(ApplyFormat(converted.X, converted.Y));
                         }
                         
-
-                        
                     }
 
-
-                
                 }
 
-              
                      rtbOutput.Text = sBuilder.ToString();
-               
-
                
             }
         }
@@ -499,8 +422,6 @@ namespace VectorObjectPlotter
                 angle += 180;
             }
 
-            
-
             return new Point((int)Math.Round((decimal)r, 0), (int)Math.Round((decimal)angle, 0));
         }
 
@@ -527,8 +448,6 @@ namespace VectorObjectPlotter
             //need to scale image and increase width/height of pbCanvas?
             //probably need a ScaleCoordinate function or something
 
-            
-
             //_scale += .1F; //increment scale by 5
             _scale += 1F; //increment scale by 5
 
@@ -537,7 +456,6 @@ namespace VectorObjectPlotter
 
             pbCanvas.Invalidate();
 
-            
         }
 
         private void btnZoomOut_Click(object sender, EventArgs e)
@@ -553,7 +471,6 @@ namespace VectorObjectPlotter
             ReSizeCanvas();
 
             pbCanvas.Invalidate();
-
 
         }
 
@@ -700,34 +617,7 @@ namespace VectorObjectPlotter
                 }
                     
 
-                //foreach (var line in rtbOutput.Lines)
-                //{
-                //    if (!string.IsNullOrWhiteSpace(line))
-                //    {
-                //        string[] xy = line.Split(new Char[] { ',' });
-                //        //check if we're using polar or cartesian format first
-                //        if (cboExportFormat.SelectedText == "Cartesian (x, y)" || cboExportFormat.SelectedIndex == 0)
-                //        {
-                //            var scaledCoord = ScaleToPictureBox(new Point(int.Parse(xy[0]), int.Parse(xy[1])));
-                //            _coordinates.Add(scaledCoord);
-                //        }
-                //        else
-                //        {
-                //            //for uzebox coords we need to multiply by 1.41 since there are only 256 degrees instead of 360
-                //            double newAngle = int.Parse(xy[1]);
-                //            newAngle = newAngle * 1.41;
-
-                //            //convert polar to cartesian
-                //            Point tempCoord = ConvertToCartesian(new Point(int.Parse(xy[0]), (int)Math.Round((decimal)newAngle, 0)));
-                //            var scaledCoord = ScaleToPictureBox(tempCoord);
-
-                //            _coordinates.Add(scaledCoord);
-                //        }
-                //    }
-
-
-
-                //}
+               
             }
             catch (Exception ex)
             {
@@ -756,38 +646,6 @@ namespace VectorObjectPlotter
             _showCoords = !_showCoords;
 
             pbCanvas.Invalidate();
-        }
-
-        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-            //Point p1 = new Point(10, 10);
-            //Point p2 = new Point(-10, 10);
-            //Point p3 = new Point(-10, -10);
-            //Point p4 = new Point(10, -10);
-
-            //Point scaledP1 = ScaleCoordinate(p1);
-            //Point scaledP2 = ScaleCoordinate(p2);
-            //Point scaledP3 = ScaleCoordinate(p3);
-            //Point scaledP4 = ScaleCoordinate(p4);
-
-            //scaledP1 = ScaleToPictureBox(scaledP1);
-            //scaledP2 = ScaleToPictureBox(scaledP2);
-            //scaledP3 = ScaleToPictureBox(scaledP3);
-            //scaledP4 = ScaleToPictureBox(scaledP4);
-
-            //Graphics g = pbCanvas.CreateGraphics();
-
-            //g.DrawLine(System.Drawing.Pens.Black, scaledP1.X, scaledP1.Y,
-            //           scaledP2.X, scaledP2.Y);
-
-            //g.DrawLine(System.Drawing.Pens.Black, scaledP2.X, scaledP2.Y,
-            //           scaledP3.X, scaledP3.Y);
-
-            //g.DrawLine(System.Drawing.Pens.Black, scaledP3.X, scaledP3.Y,
-            //           scaledP4.X, scaledP4.Y);
-
-            //g.DrawLine(System.Drawing.Pens.Black, scaledP4.X, scaledP4.Y,
-            //           scaledP1.X, scaledP1.Y);
         }
 
         private void btnCopyToClipboard_Click(object sender, EventArgs e)

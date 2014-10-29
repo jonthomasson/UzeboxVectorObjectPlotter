@@ -122,7 +122,7 @@
             this.toolStrip1.Size = new System.Drawing.Size(1750, 39);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
-            this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
+            
             // 
             // btnClear
             // 
@@ -325,7 +325,7 @@
             this.pbCanvas.Click += new System.EventHandler(this.pbCanvas_Click);
             this.pbCanvas.Paint += new System.Windows.Forms.PaintEventHandler(this.pbCanvas_Paint);
             this.pbCanvas.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pbCanvas_MouseMove);
-            this.pbCanvas.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.pbCanvas_MouseWheel);
+            
             // 
             // statusStrip1
             // 
