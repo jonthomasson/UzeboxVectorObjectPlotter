@@ -12,3 +12,5 @@ Use:
 Most of the buttons should be self explanatory. If you hover your mouse over them they will also give you a useful tooltip about their function. 
 
 The Output panel can either export or import polar or cartesian coordinates. To import coordinates just paste the coordinates into the Output panel and click on the Sync button. NOTE: make sure the coordinates match the Pattern displayed in the Pattern text box (replacing <x> and <y> with the appropriate cartesian or polar coordinate). The pattern can also be modified to your liking. 
+
+To switch between polar and cartesian import/export mode just select the appropriate option in the Import/Export Format dropdown list. This can also be a useful feature for converting cartesian coordinates to polar, or vice versa.
